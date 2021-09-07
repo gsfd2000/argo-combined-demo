@@ -33,7 +33,7 @@ argocd login \
 
 argocd account update-password \
     --current-password $PASS \
-    --new-password admin
+    --new-password adminuser
 
 xdg-open http://argo-cd.$BASE_HOST
 

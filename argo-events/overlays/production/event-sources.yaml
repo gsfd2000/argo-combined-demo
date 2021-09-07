@@ -17,7 +17,7 @@ spec:
         endpoint: /argo-combined-app
         port: "12000"
         method: POST
-        url: http://webhook.argo.192.168.62.2.nip.io
+        url: http://webhook.argo.172.18.0.2.nip.io
       events:
         - "*"
       apiToken:
