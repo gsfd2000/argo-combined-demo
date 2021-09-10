@@ -9,3 +9,15 @@ stringData:
   url: https://bitnami-labs.github.io/sealed-secrets
   name: bitnami-labs
   type: helm
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bitnami-helm-repo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://charts.bitnami.com/bitnami
+  name: bitnami-stable
+  type: helm
