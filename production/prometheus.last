@@ -17,8 +17,12 @@ spec:
     chart: prometheus
     helm:
       parameters:
+        - name: alertmanager.securityContext.runAsGroup
+          value: '0'
         - name: alertmanager.securityContext.runAsNonRoot
           value: 'false'
+        - name: alertmanager.securityContext.runAsUser
+          value: '0'
   project: production
   syncPolicy:
     automated:
