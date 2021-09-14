@@ -16,7 +16,11 @@ spec:
     targetRevision: 14.6.0
     chart: prometheus
     helm:
-      parameters: []
+      parameters:
+        - name: alertmanager.securityContext.runAsGroup
+          value: '0'
+        - name: alertmanager.securityContext.runAsUser
+          value: '0'
   project: production
   syncPolicy:
     automated:
