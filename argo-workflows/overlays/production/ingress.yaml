@@ -13,7 +13,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: "/argo(/|$)(.*)"
+      - path: /argo(/|$)(.*)
         pathType: Prefix
         backend:
           service:
