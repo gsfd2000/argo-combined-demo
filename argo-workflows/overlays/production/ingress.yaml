@@ -11,6 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
 spec:
   rules:
