@@ -10,7 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
     ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    ingress.kubernetes.io/force-ssl-redirect: "true
+    ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
   - http:
