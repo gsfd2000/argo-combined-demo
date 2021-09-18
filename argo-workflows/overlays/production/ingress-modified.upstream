@@ -4,22 +4,23 @@ metadata:
   name: argo-workflows
   namespace: argo
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/rewrite-target: "/$2"
+    nginx.ingress.kubernetes.io/use-regex: "true"
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
     ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    ingress.kubernetes.io/force-ssl-redirect: "true
+    nginx.ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
+      - path: /argo(/|$)(.*)
         backend:
           service:
            name: argo-server
            port:
              number: 2746
-    host: argo-workflows.104.196.111.81.xip.io
+    host: argo-workflows.argo.172.18.0.2.nip.io
