@@ -6,5 +6,6 @@ resources:
 - regcred.yaml
 - ingress.yaml
 
-# patchesStrategicMerge:
-# - argo-server-deployment-patch2.yaml
+patchesStrategicMerge:
+- argo-server-deployment-patch.yaml
+- argo-server-svc-lb-patch.yaml
