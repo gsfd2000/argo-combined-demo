@@ -9,8 +9,8 @@ metadata:
     ingress.kubernetes.io/force-ssl-redirect: "true"
     ingress.kubernetes.io/rewrite-target: "/$2"
     nginx.ingress.kubernetes.io/use-regex: "true"
-    ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
     nginx.ingress.kubernetes.io/backend-protocol: "https" # ingress-nginx
 spec:
@@ -18,6 +18,7 @@ spec:
   - http:
       paths:
       - path: /argo(/|$)(.*)
+        pathType: Prefix
         backend:
           service:
            name: argo-server
