@@ -5,3 +5,6 @@ resources:
 - ../workflows
 - regcred.yaml
 - ingress.yaml
+
+patchesStrategicMerge:
+- argo-server-deployment-patch2.yaml
